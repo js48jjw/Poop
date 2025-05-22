@@ -85,7 +85,7 @@
     .arrowButton {
         width: 20px;
         height: 50px;
-        bottom: 20px;
+        bottom: 15px;
         border-radius: 12px;
         box-shadow: 2px 2px 6px #babecc, -2px -2px 6px #ffffff;
         background: linear-gradient(135deg, #e0e5ec 0%, #f9f9f9 100%);
@@ -158,9 +158,9 @@
     }
     #scoreBoard {
         position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 14px;
+        top: 20px;
+        left: 19px;
+        font-size: 30px;
         font-weight: 700;
         color: #2c3e50;
         background: rgba(255, 255, 255, 0.95);
@@ -315,8 +315,8 @@
         #scoreBoard {
             font-size: 14px;
             padding: 6px 10px;
-            top: 10px;
-            left: 10px;
+            top: 8px;
+            left: 8px;
             border-radius: 10px;
             border: 1.5px solid #3498db;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -408,7 +408,7 @@
     const playerY = canvas.height - playerHeight - canvasWidth * 0.001;
     const playerImage = new Image();
     playerImage.src = 'player.png';
-    let playerMoveSpeed = canvasWidth * 0.004817;
+    let playerMoveSpeed = canvasWidth * 0.005817;
     let rightPressed = false;
     let leftPressed = false;
     const playerHitboxRatio = 0.67;
