@@ -108,7 +108,7 @@
         transform: translateY(1px);
     }
     .arrowButton svg {
-        width: 32px;
+        width: 20px;
         height: 32px;
         fill: #4f8cff;
         filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
@@ -118,8 +118,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         border-radius: 35px;
         background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 100%);
         pointer-events: none;
@@ -158,18 +158,18 @@
     }
     #scoreBoard {
         position: absolute;
-        top: 25px;
-        left: 25px;
-        font-size: 28px;
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
         font-weight: 700;
         color: #2c3e50;
         background: rgba(255, 255, 255, 0.95);
-        padding: 12px 20px;
-        border-radius: 15px;
+        padding: 6px 10px;
+        border-radius: 10px;
         display: none;
         z-index: 5;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        border: 2px solid #3498db;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border: 1.5px solid #3498db;
     }
     #highScoreSection {
         background: linear-gradient(145deg, #ffffff, #f8f9fa);
@@ -264,16 +264,16 @@
         }
         #controls {
             margin-top: 0;
-            padding: 8px 0;
+            padding: 8px 0 40px 0;
             width: 100%;
             box-sizing: border-box;
             font-size: 14px;
         }
         .arrowButton {
-            width: 40px;
-            height: 40px;
-            bottom: 5px;
-            border-radius: 25px;
+            width: 20px;
+            height: 20px;
+            bottom: 10px;
+            border-radius: 15px;
             box-shadow: 3px 3px 8px #babecc, -3px -3px 8px #ffffff;
         }
         .arrowButton:hover {
@@ -283,12 +283,12 @@
             box-shadow: 1px 1px 4px #babecc, -1px -1px 4px #ffffff;
         }
         .arrowButton svg {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             filter: drop-shadow(0 0.5px 1px rgba(0,0,0,0.1));
         }
         .arrowButton::after {
-            border-radius: 25px;
+            border-radius: 15px;
         }
         #leftArrow {
             left: 10px;
@@ -313,10 +313,10 @@
             min-width: 120px;
         }
         #scoreBoard {
-            font-size: 18px;
-            padding: 8px 12px;
-            top: 15px;
-            left: 15px;
+            font-size: 14px;
+            padding: 6px 10px;
+            top: 10px;
+            left: 10px;
             border-radius: 10px;
             border: 1.5px solid #3498db;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -402,8 +402,8 @@
     let animationFrameId = null;
     let gameRunning = false;
 
-    const playerWidth = window.innerWidth <= 600 ? canvasWidth * 0.08 : canvasWidth * 0.067;
-    const playerHeight = window.innerWidth <= 600 ? canvasWidth * 0.08 : canvasWidth * 0.067;
+    const playerWidth = window.innerWidth <= 600 ? canvasWidth * 0.15 : canvasWidth * 0.067;
+    const playerHeight = window.innerWidth <= 600 ? canvasWidth * 0.15 : canvasWidth * 0.067;
     let playerX = (canvas.width - playerWidth) / 2;
     const playerY = canvas.height - playerHeight - canvasWidth * 0.001;
     const playerImage = new Image();
@@ -621,8 +621,8 @@
         drawStickman(playerX, playerY, playerWidth, playerHeight);
         
         const isMobile = window.innerWidth <= 600;
-        const faceWidth = isMobile ? playerWidth * 1.0 : playerWidth * 0.9005;
-        const faceHeight = isMobile ? playerHeight * 0.7 : playerHeight * 0.6;
+        const faceWidth = isMobile ? playerWidth * 1.1 : playerWidth * 0.9005;
+        const faceHeight = isMobile ? playerHeight * 0.8 : playerHeight * 0.6;
         const faceX = playerX + (playerWidth - faceWidth) / 2;
         const faceY = playerY - faceHeight * (isMobile ? 0.4 : 0.45);
         ctx.drawImage(playerImage, faceX, faceY, faceWidth, faceHeight);
