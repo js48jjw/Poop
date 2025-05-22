@@ -251,65 +251,88 @@
     }
     @media (max-width: 600px) {
         #gameContainer {
+            padding: 0;
+            border-radius: 16px;
             width: 90vw;
             max-width: 640px;
-            border-radius: 30px;
         }
         #gameCanvas {
-            max-height: 750px;
-            border-radius: 20px;
-            margin: 18px auto 0 auto;
-            border: 4px solid #2c3e50;
+            max-height: calc(90vw * 1.25);
+            border-radius: 12px;
+            margin: 0;
+            border: 2px solid #2c3e50;
         }
         #controls {
             margin-top: 0;
-            padding: 15px;
-            font-size: 16px;
+            padding: 8px 0;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
         }
         .arrowButton {
-            width: 54px;
-            height: 54px;
-            bottom: 18px;
+            width: 48px;
+            height: 48px;
+            bottom: 10px;
+            border-radius: 30px;
+            box-shadow: 4px 4px 10px #babecc, -4px -4px 10px #ffffff;
+        }
+        .arrowButton:hover {
+            box-shadow: 6px 6px 15px #babecc, -6px -6px 15px #ffffff;
+        }
+        .arrowButton:active {
+            box-shadow: 2px 2px 6px #babecc, -2px -2px 6px #ffffff;
+        }
+        .arrowButton svg {
+            width: 24px;
+            height: 24px;
+            filter: drop-shadow(0 0.5px 1px rgba(0,0,0,0.1));
+        }
+        .arrowButton::after {
+            border-radius: 30px;
         }
         #leftArrow {
-            left: 8px;
+            left: 10px;
         }
         #rightArrow {
-            right: 8px;
+            right: 10px;
         }
         #moveDesc {
             margin: 0;
             padding: 0 8px;
-            font-size: 16px;
+            font-size: 12px;
         }
         #startScreen h2, #gameOverScreen h2 {
-            font-size: 42px;
+            font-size: 28px;
         }
         #startScreen p, #gameOverScreen p {
-            font-size: 18px;
+            font-size: 15px;
         }
         button {
-            padding: 15px 30px;
-            font-size: 20px;
-            min-width: 150px;
+            padding: 12px 24px;
+            font-size: 16px;
+            min-width: 120px;
         }
         #scoreBoard {
-            font-size: 28px;
-            padding: 12px 20px;
-            top: 25px;
-            left: 25px;
-            border-radius: 15px;
-            border: 2px solid #3498db;
+            font-size: 18px;
+            padding: 8px 12px;
+            top: 15px;
+            left: 15px;
+            border-radius: 10px;
+            border: 1.5px solid #3498db;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         #highScoreSection {
-            padding: 20px;
-            max-width: 200px;
+            padding: 12px;
+            max-width: 150px;
         }
         #highScoreSection h3 {
-            font-size: 20px;
+            font-size: 16px;
+            margin-bottom: 8px;
         }
         #highScoreDate, #topScoresList li {
-            font-size: 16px;
+            font-size: 12px;
+            margin-bottom: 4px;
+            padding: 3px;
         }
     }
 </style>
@@ -379,8 +402,8 @@
     let animationFrameId = null;
     let gameRunning = false;
 
-    const playerWidth = canvasWidth * 0.067;
-    const playerHeight = canvasWidth * 0.067;
+    const playerWidth = window.innerWidth <= 600 ? canvasWidth * 0.08 : canvasWidth * 0.067;
+    const playerHeight = window.innerWidth <= 600 ? canvasWidth * 0.08 : canvasWidth * 0.067;
     let playerX = (canvas.width - playerWidth) / 2;
     const playerY = canvas.height - playerHeight - canvasWidth * 0.001;
     const playerImage = new Image();
@@ -597,10 +620,11 @@
     function drawPlayer() {
         drawStickman(playerX, playerY, playerWidth, playerHeight);
         
-        const faceWidth = playerWidth * 0.9005;
-        const faceHeight = playerHeight * 0.6;
+        const isMobile = window.innerWidth <= 600;
+        const faceWidth = isMobile ? playerWidth * 1.0 : playerWidth * 0.9005;
+        const faceHeight = isMobile ? playerHeight * 0.7 : playerHeight * 0.6;
         const faceX = playerX + (playerWidth - faceWidth) / 2;
-        const faceY = playerY - faceHeight * 0.45;
+        const faceY = playerY - faceHeight * (isMobile ? 0.4 : 0.45);
         ctx.drawImage(playerImage, faceX, faceY, faceWidth, faceHeight);
         
         if (leftPressed || rightPressed) {
