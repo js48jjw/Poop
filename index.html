@@ -624,7 +624,7 @@
         const faceWidth = isMobile ? playerWidth * 0.99 : playerWidth * 0.9005;
         const faceHeight = isMobile ? playerHeight * 0.65 : playerHeight * 0.6;
         const faceX = playerX + (playerWidth - faceWidth) / 2;
-        const faceY = playerY - faceHeight * (isMobile ? 0.42 : 0.45);
+        const faceY = playerY - faceHeight * (isMobile ? 0.438 : 0.45);
         ctx.drawImage(playerImage, faceX, faceY, faceWidth, faceHeight);
         
         if (leftPressed || rightPressed) {
