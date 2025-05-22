@@ -71,22 +71,22 @@
     }
     #controls {
         margin-top: 0;
-        padding: 8px 0 40px 0;
+        padding: 15px 0;
         width: 100%;
         box-sizing: border-box;
         font-size: 14px;
         text-align: center;
+        position: relative;
         background: rgba(255, 255, 255, 0.9);
         padding: 15px;
         border-radius: 15px;
-        position: relative;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .arrowButton {
-        width: 14px;
-        height: 14px;
+        width: 25px;
+        height: 25px;
         bottom: 10px;
-        border-radius: 8px;
+        border-radius: 12px;
         box-shadow: 2px 2px 6px #babecc, -2px -2px 6px #ffffff;
         background: linear-gradient(135deg, #e0e5ec 0%, #f9f9f9 100%);
         display: flex;
@@ -108,8 +108,8 @@
         transform: translateY(1px);
     }
     .arrowButton svg {
-        width: 10px;
-        height: 10px;
+        width: 18px;
+        height: 18px;
         fill: #4f8cff;
         filter: drop-shadow(0 0.5px 1px rgba(0,0,0,0.1));
     }
@@ -120,7 +120,7 @@
         left: 0;
         width: 90%;
         height: 90%;
-        border-radius: 8px;
+        border-radius: 12px;
         background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 100%);
         pointer-events: none;
     }
@@ -264,16 +264,16 @@
         }
         #controls {
             margin-top: 0;
-            padding: 8px 0 40px 0;
+            padding: 15px 0;
             width: 100%;
             box-sizing: border-box;
             font-size: 14px;
         }
         .arrowButton {
-            width: 14px;
-            height: 14px;
+            width: 5px;
+            height: 25px;
             bottom: 10px;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 2px 2px 6px #babecc, -2px -2px 6px #ffffff;
         }
         .arrowButton:hover {
@@ -283,12 +283,12 @@
             box-shadow: 1px 1px 3px #babecc, -1px -1px 3px #ffffff;
         }
         .arrowButton svg {
-            width: 10px;
-            height: 10px;
+            width: 25px;
+            height: 25px;
             filter: drop-shadow(0 0.5px 1px rgba(0,0,0,0.1));
         }
         .arrowButton::after {
-            border-radius: 8px;
+            border-radius: 12px;
         }
         #leftArrow {
             left: 5px;
@@ -297,7 +297,7 @@
             right: 5px;
         }
         #moveDesc {
-            margin: 0;
+            margin: 0 0 10px 0;
             padding: 0 8px;
             font-size: 12px;
         }
@@ -917,10 +917,10 @@
     });
 
     leftArrow.innerHTML = `<svg viewBox="0 0 24 24">
-        <path d="M 17 7 L 15 7 L 10 12 L 15 17 L 17 17 L 12 12 Z"/>
+        <path d="M 16 6 L 14 6 L 9 12 L 14 18 L 16 18 L 11 12 Z"/>
     </svg>`;
     rightArrow.innerHTML = `<svg viewBox="0 0 24 24">
-        <path d="M 7 7 L 9 7 L 14 12 L 9 17 L 7 17 L 12 12 Z"/>
+        <path d="M 8 6 L 10 6 L 15 12 L 10 18 L 8 18 L 13 12 Z"/>
     </svg>`;
 
     // 모바일에서만 설명글을 '무브무브!!'로 변경
