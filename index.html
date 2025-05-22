@@ -402,8 +402,8 @@
     let animationFrameId = null;
     let gameRunning = false;
 
-    const playerWidth = window.innerWidth <= 600 ? canvasWidth * 0.15 : canvasWidth * 0.067;
-    const playerHeight = window.innerWidth <= 600 ? canvasWidth * 0.15 : canvasWidth * 0.067;
+    const playerWidth = window.innerWidth <= 600 ? canvasWidth * 0.11 : canvasWidth * 0.067;
+    const playerHeight = window.innerWidth <= 600 ? canvasWidth * 0.11 : canvasWidth * 0.067;
     let playerX = (canvas.width - playerWidth) / 2;
     const playerY = canvas.height - playerHeight - canvasWidth * 0.001;
     const playerImage = new Image();
@@ -621,8 +621,8 @@
         drawStickman(playerX, playerY, playerWidth, playerHeight);
         
         const isMobile = window.innerWidth <= 600;
-        const faceWidth = isMobile ? playerWidth * 1.1 : playerWidth * 0.9005;
-        const faceHeight = isMobile ? playerHeight * 0.8 : playerHeight * 0.6;
+        const faceWidth = isMobile ? playerWidth * 1.0 : playerWidth * 0.9005;
+        const faceHeight = isMobile ? playerHeight * 0.7 : playerHeight * 0.6;
         const faceX = playerX + (playerWidth - faceWidth) / 2;
         const faceY = playerY - faceHeight * (isMobile ? 0.4 : 0.45);
         ctx.drawImage(playerImage, faceX, faceY, faceWidth, faceHeight);
